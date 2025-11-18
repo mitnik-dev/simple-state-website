@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Florida</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+
+</head>
+<img src="assets/images/home/overview-beach.jpg" alt="Aerial view of a beach with golden sand, palm trees, and coastal vegetation. The turquoise ocean meets the shoreline under a clear sky, with a few people walking along the beach." class="background">
+<body class="main-background">
+    <nav>
+        <a href="index.html" class="home-link">Florida</a>
+        <ul>
+            <li><a href="cities/tallahassee.html">Tallahassee</a></li>
+            <li><a href="cities/orlando.html">Orlando</a></li>
+            <li><a href="cities/miami.html">Miami</a></li>
+        </ul>
+    </nav>
+    <div class="contact-header">
+        <header class="header">Contact Us</header>
+    </div>
+    <section class="contact-container">
+        <form class="contact-form">
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" name="first-name" required>
+
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" name="last-name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="confirm-email">Confirm Email</label>
+            <input type="email" id="confirm-email" name="confirm-email" required>
+
+            <label for="question">Question</label>
+            <textarea id="question" name="question" rows="4" required></textarea>
+
+            <button type="submit" class="submit-btn">Submit</button>
+        </form> 
+    </section>
+    <footer>
+        <p>&copy; Charlie Mitnik</p>
+        <div class="contact-link-container">
+            <a href="contact-us.html">Contact Us</a>
+            <img src="assets/images/icons/email-small.png" height=20px width=20px alt="mail icon" class="icon">
+        </div>
+    </footer>
+    <script>
+        const emailInput = document.getElementById('email');
+        const confirmEmailInput = document.getElementById('confirm-email');
+    
+        emailInput.addEventListener('input', checkEmailsMatch);
+        confirmEmailInput.addEventListener('input', checkEmailsMatch);
+    
+        function checkEmailsMatch() {
+            const email = emailInput.value;
+            const confirmEmail = confirmEmailInput.value;
+    
+            if (email !== confirmEmail) {
+                confirmEmailInput.setCustomValidity('Email addresses do not match');
+                confirmEmailInput.reportValidity();
+            } else {
+                confirmEmailInput.setCustomValidity('');
+            }
+        }
+    </script>
+    
+</body>
+</html>
